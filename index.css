@@ -1,0 +1,192 @@
+/* -------------------------- */
+/*      Custom Properties     */
+/* -------------------------- */
+:root {
+  /* colors */
+  --clr-pale-blue: hsl(225, 100%, 98%);
+  --clr-desaturated-blue: hsl(224, 23%, 55%);
+  --clr-dark-blue: hsl(223, 47%, 23%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-purple: hsl(245, 77%, 53%);
+
+  /* font-families */
+  --ff-red-hat-display: 'Red Hat Display', serif;
+  --ff-sans-cond: 'Barlow Condensed', sans-serif;
+  --ff-sans-normal: 'Barlow', sans-serif;
+}
+
+/* -------------------------- */
+/*           Reset            */
+/* -------------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+/* set up the body */
+body {
+  font-family: var(--ff-red-hat-display);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--clr-desaturated-blue);
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who have turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* BUTTON UTILITY CLASSES */
+.button {
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 1rem;
+  border: none;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 10px;
+}
+
+.primary-button {
+  color: var(--clr-white);
+  background-color: var(--clr-purple);
+}
+
+.primary-button:hover {
+  color: var(--clr-white);
+  background-color: hsl(245, 77%, 43%);
+}
+
+.secondary-button {
+  color: gray;
+  background-color: white;
+}
+
+.secondary-button:hover {
+  color: black;
+}
+
+/* OTHER UTILITY CLASSES */
+.dark-blue-text {
+  color: var(--clr-dark-blue);
+}
+
+.white-text {
+  color: var(--clr-white);
+}
+
+.bg-pale-blue {
+  background-color: ;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0 1rem;
+  text-align: center;
+  max-width: 25rem;
+  min-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+/* PAGE SPECIFIC CLASSES */
+
+.content {
+  background-color: var(--clr-white);
+  border-radius: 0 0 10px 10px;
+  padding: 3rem;
+}
+
+.content-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.price-info-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-pale-blue);
+  padding: 1rem;
+}
+
+.annual-plan-container {
+  display: flex;
+}
+
+.music-icon {
+  margin-right: 1rem;
+}
+
+/* Background */
+.home {
+  background-image: url(./images/pattern-background-mobile.svg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 35rem) {
+  .home {
+    background-image: url(./images/pattern-background-desktop.svg);
+  }
+}
